@@ -25,9 +25,10 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    compile group: 'org.apache.httpcomponents' , name: 'httpclient-android' , version: '4.3.5.1'
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha8'
     compile 'com.squareup.picasso:picasso:2.5.0'
-    compile 'org.apache.httpcomponents:httpclient:4.5'
+   // compile 'org.apache.httpcomponents:httpclient:4.5'
     testCompile 'junit:junit:4.12'
 }

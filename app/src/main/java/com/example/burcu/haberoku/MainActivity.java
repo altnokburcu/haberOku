@@ -32,17 +32,17 @@ public class MainActivity extends AppCompatActivity {
 
     private static ListAdapterNews adapter;
 
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceBundle){
-        View rootView = inflater.inflate(R.layout.activity_main, container, false);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
         try {
             CheckNews news = new CheckNews();       //CheckNews AsyncTask ile çalışan class.
-            news.execute();                         //CheckNews class'ını çalıştırıp API'den verileri çekiyoruz.
-            return rootView;
+            news.execute();                         //CheckNews class'ını çalıştırıp API'den verileri çekiyoruz
         }
         catch (Exception e) {
             e.printStackTrace();
         }
-        return rootView;
     }
 
     class CheckNews extends AsyncTask<Object, Object, ArrayList<NewsMO>> {
